@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html class="" lang="en-US"><head><script src="https://reveal.clearbit.com/v1/companies/reveal?variable=reveal&amp;authorization=pk_7144fadb90a8fdd9c89e1395ff4171a3"></script><script>
+if (window.reveal && window.reveal.company) {
+	var r = window.reveal;
+	window.clearbit_fmt = {
+		cb_traffic_type: r.type,
+		cb_company_name: r.company.name,
+		cb_industry_tags: r.company.tags.join(', '),
+		cb_industry_sector: r.company.category.sector,
+		cb_industry_group:  r.company.category.industryGroup,
+		cb_industry_name: r.company.category.industry,
+		cb_industry_sub: r.company.category.subIndustry,
+		cb_company_city: r.company.geo.city,
+		cb_company_state:r.company.geo.state,
+		cb_company_country: r.company.geo.country,
+		cb_alexa_us: r.company.metrics.alexaUsRank,
+		cb_alexa_global: r.company.metrics.alexaGlobalRank,
+		cb_size_employees: r.company.metrics.employees,
+		cb_size_range: r.company.metrics.employeesRange,
+		cb_size_annual_revenue: r.company.metrics.annualRevenue,
+		cb_size_est_revenue: r.company.metrics.estimatedAnnualRevenue,
+	}
+}
+
+window.optimizely_fmt = {
+	"type": "user",
+	"attributes": {
+		"visitor_uid" : "9fn5w0h74c9b4iq8w94y2p30i",
+		"visitor_type": "prospect",
+		"is_first_visit": true,
+		"traffic_type": "logged_out",	}
+}
+window.drift_fmt = {
+	"visitor_type": "prospect",
+	"is_first_visit": true,
+	"traffic_type": "logged_out",
+	"is_paid_plan": false,
+	"is_free_plan": false,
+	"is_ent_plan": false,
+}
+if (window.drift) {
+	window.drift.on('ready', function() {
+		window.drift.api.setUserAttributes(window.drift_fmt);
+	});
+}
+if (window.reveal && window.reveal.company) {
+	window.dataLayer = window.dataLayer || [];
+	window.dataLayer.push(window.clearbit_fmt);
+	window.dataLayer.push({event: 'Clearbit'});
+}
+if (window.reveal && window.reveal.company) {
+	for (var p in window.clearbit_fmt) {
+		if (window.clearbit_fmt.hasOwnProperty(p)) {
+			window.optimizely_fmt.attributes[p] = window.clearbit_fmt[p];
+		}
+	}
+}
+window.optimizely = window.optimizely || [];
+if (!window.OnetrustActiveGroups || window.OnetrustActiveGroups.includes('C0003')) {
+window.optimizely.push({'type':'optOut','isOptOut':false});
+window.optimizely.push(window.optimizely_fmt);
+} else {
+window.optimizely.push({'type':'optOut','isOptOut':true});
+}
+</script><script src="https://cdn.optimizely.com/js/13778740109.js"></script><script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-9/webpack.manifest.70d103e9add97d7a82a4.min.js" type="text/javascript"></script><script>window.ts_endpoint_url = "https:\/\/slack.com\/beacon\/timing";(function(e) {
+	var n=Date.now?Date.now():+new Date,r=e.performance||{},t=[],a={},i=function(e,n){for(var r=0,a=t.length,i=[];a>r;r++)t[r][e]==n&&i.push(t[r]);return i},o=function(e,n){for(var r,a=t.length;a--;)r=t[a],r.entryType!=e||void 0!==n&&r.name!=n||t.splice(a,1)};r.now||(r.now=r.webkitNow||r.mozNow||r.msNow||function(){return(Date.now?Date.now():+new Date)-n}),r.mark||(r.mark=r.webkitMark||function(e){var n={name:e,entryType:"mark",startTime:r.now(),duration:0};t.push(n),a[e]=n}),r.measure||(r.measure=r.webkitMeasure||function(e,n,r){n=a[n].startTime,r=a[r].startTime,t.push({name:e,entryType:"measure",startTime:n,duration:r-n})}),r.getEntriesByType||(r.getEntriesByType=r.webkitGetEntriesByType||function(e){return i("entryType",e)}),r.getEntriesByName||(r.getEntriesByName=r.webkitGetEntriesByName||function(e){return i("name",e)}),r.clearMarks||(r.clearMarks=r.webkitClearMarks||function(e){o("mark",e)}),r.clearMeasures||(r.clearMeasures=r.webkitClearMeasures||function(e){o("measure",e)}),e.performance=r,"function"==typeof define&&(define.amd||define.ajs)&&define("performance",[],function(){return r}) // eslint-disable-line
+})(window);</script><script>
+
+(function () {
+	
+	window.TSMark = function (mark_label) {
+		if (!window.performance || !window.performance.mark) return;
+		performance.mark(mark_label);
+	};
+	window.TSMark('start_load');
+
+	
+	window.TSMeasureAndBeacon = function (measure_label, start_mark_label) {
+		if (!window.performance || !window.performance.mark || !window.performance.measure) {
+			return;
+		}
+
+		performance.mark(start_mark_label + '_end');
+
+		try {
+			performance.measure(measure_label, start_mark_label, start_mark_label + '_end');
+			window.TSBeacon(measure_label, performance.getEntriesByName(measure_label)[0].duration);
+		} catch (e) {
+			
+		}
+	};
+
+	
+	if ('sendBeacon' in navigator) {
+		window.TSBeacon = function (label, value) {
+			var endpoint_url = window.ts_endpoint_url || 'https://slack.com/beacon/timing';
+			navigator.sendBeacon(
+				endpoint_url + '?data=' + encodeURIComponent(label + ':' + value),
+				''
+			);
+		};
+	} else {
+		window.TSBeacon = function (label, value) {
+			var endpoint_url = window.ts_endpoint_url || 'https://slack.com/beacon/timing';
+			new Image().src = endpoint_url + '?data=' + encodeURIComponent(label + ':' + value);
+		};
+	}
+})();
+</script><script>window.TSMark('step_load');</script><noscript><meta content="0; URL=" http-equiv="refresh"/></noscript><script type="text/javascript">var safe_hosts = ['app.optimizely.com', 'tinyspeck.dev.slack.com'];
+
+if (self !== top && safe_hosts.indexOf(top.location.host) === -1) {
+	window.document.write(
+		'\u003Cstyle>body * {display:none !important;}\u003C/style>\u003Ca href="#" onclick=' +
+			'"top.location.href=window.location.href" style="display:block !important;padding:10px">Go to Slack.com\u003C/a>'
+	);
+}
+
+(function() {
+	var timer;
+	if (self !== top && safe_hosts.indexOf(top.location.host) === -1) {
+		timer = window.setInterval(function() {
+			if (window) {
+				try {
+					var pageEl = document.getElementById('page');
+					var clientEl = document.getElementById('client-ui');
+					var sectionEls = document.querySelectorAll('nav, header, section');
+
+					pageEl.parentNode.removeChild(pageEl);
+					clientEl.parentNode.removeChild(clientEl);
+					for (var i = 0; i < sectionEls.length; i++) {
+						sectionEls[i].parentNode.removeChild(sectionEls[i]);
+					}
+					window.TS = null;
+					window.TD = null;
+					window.clearInterval(timer);
+				} catch (e) {}	
+			}
+		}, 200);
+	}
+})();</script><script data-document-language="true" data-domain-script="fe78fd86-b58b-4f0c-a311-dd924eb08736" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"></script><script>
+function getScrollPercent() {
+	var h = document.documentElement, b = document.body, st = 'scrollTop', sh = 'scrollHeight';
+	return Math.round((h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
+}
+
+function initDrift() {
+	if (window.drift_loaded) return;
+	if (0 > 0 && 0 > getScrollPercent()) {
+		document.addEventListener('scroll', function() {
+			var p = getScrollPercent();
+			if (p >= 0) { bootDrift(); }
+		});
+	} else { bootDrift(); }
+}
+
+function bootDrift() {
+	if (window.drift_loaded) return;
+	if (window.drift && window.OnetrustActiveGroups && window.OnetrustActiveGroups.includes('C0003')) {
+		window.drift_loaded = true;
+		setTimeout(function() { drift.load('a6yri4b82zv7'); }, 0);
+	}
+}
+
+function OptanonWrapper() {
+	
+	window.dataLayer.push({'event': 'OneTrustReady'});
+	Optanon.OnConsentChanged(function() {
+		initDrift();
+		if (window.TD && window.TD.clog) {
+			window.TD.clog.track('WEBSITE_CLICK', {
+				'trigger': window.OnetrustActiveGroups,
+				'step':'consent_changed',
+				'contexts': {
+					'ui_context': {
+						'step': TD.boot_data.clog_ui_step,
+						'action': 'settings',
+						'ui_component': 'inc_cookie_banner_v2'
+					}
+				}
+			});
+		}
+	});
+}</script><meta content="chiwsajpoybn2cnqyj9w8mvrey56m0" name="facebook-domain-verification"/><script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+	'gtm.start': Date.now(),
+	'event' : 'gtm.js',
+	'secure_page' : false,
+});
+var firstScript = document.getElementsByTagName('script')[0];
+var thisScript = document.createElement('script');
+thisScript.async = true;
+thisScript.src = '//www.googletagmanager.com/gtm.js?id=GTM-KH2LPK';
+firstScript.parentNode.insertBefore(thisScript, firstScript);
+</script><script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(e) {
+	var gtmDataLayer = window.dataLayer || [];
+	var gtmTags = document.querySelectorAll('*[data-gtm-click]');
+	var gtmClickHandler = function(c) {
+		var gtm_events = this.getAttribute('data-gtm-click');
+		if (!gtm_events) return;
+		var gtm_events_arr = gtm_events.split(",");
+		for(var e=0; e < gtm_events_arr.length; e++) {
+			var ev = gtm_events_arr[e].trim();
+			gtmDataLayer.push({ 'event': ev });
+		}
+	};
+	for(var g=0; g < gtmTags.length; g++){
+		var elem = gtmTags[g];
+		elem.addEventListener('click', gtmClickHandler);
+	}
+});
+</script><script type="text/javascript">
+(function(e,c,b,f,d,g,a){e.SlackBeaconObject=d;
+e[d]=e[d]||function(){(e[d].q=e[d].q||[]).push([1*new Date(),arguments])};
+e[d].l=1*new Date();g=c.createElement(b);a=c.getElementsByTagName(b)[0];
+g.async=1;g.src=f;a.parentNode.insertBefore(g,a)
+})(window,document,"script","https://a.slack-edge.com/bv1-9/slack_beacon.78c15e7609c8fd82681c.min.js","sb");
+window.sb('set', 'token', '3307f436963e02d4f9eb85ce5159744c');
+window.sb('track', 'pageview');
+</script><meta content="no-referrer" name="referrer"/><meta content="nofish" name="superfish"/><script type="text/javascript">var TS_last_log_date = null;
+var TSMakeLogDate = function() {
+	var date = new Date();
+
+	var y = date.getFullYear();
+	var mo = date.getMonth()+1;
+	var d = date.getDate();
+
+	var time = {
+	  h: date.getHours(),
+	  mi: date.getMinutes(),
+	  s: date.getSeconds(),
+	  ms: date.getMilliseconds()
+	};
+
+	Object.keys(time).map(function(moment, index) {
+		if (moment == 'ms') {
+			if (time[moment] < 10) {
+				time[moment] = time[moment]+'00';
+			} else if (time[moment] < 100) {
+				time[moment] = time[moment]+'0';
+			}
+		} else if (time[moment] < 10) {
+			time[moment] = '0' + time[moment];
+		}
+	});
+
+	var str = y + '/' + mo + '/' + d + ' ' + time.h + ':' + time.mi + ':' + time.s + '.' + time.ms;
+	if (TS_last_log_date) {
+		var diff = date-TS_last_log_date;
+		//str+= ' ('+diff+'ms)';
+	}
+	TS_last_log_date = date;
+	return str+' ';
+}
+
+var parseDeepLinkRequest = function(code) {
+	var m = code.match(/"id":"([CDG][A-Z0-9]{8,})"/);
+	var id = m ? m[1] : null;
+
+	m = code.match(/"team":"(T[A-Z0-9]{8,})"/);
+	var team = m ? m[1] : null;
+
+	m = code.match(/"message":"([0-9]+\.[0-9]+)"/);
+	var message = m ? m[1] : null;
+
+	return { id: id, team: team, message: message };
+}
+
+if ('rendererEvalAsync' in window) {
+	var origRendererEvalAsync = window.rendererEvalAsync;
+	window.rendererEvalAsync = function(blob) {
+		try {
+			var data = JSON.parse(decodeURIComponent(atob(blob)));
+			if (data.code.match(/handleDeepLink/)) {
+				var request = parseDeepLinkRequest(data.code);
+				if (!request.id || !request.team || !request.message) return;
+
+				request.cmd = 'channel';
+				TSSSB.handleDeepLinkWithArgs(JSON.stringify(request));
+				return;
+			} else {
+				origRendererEvalAsync(blob);
+			}
+		} catch (e) {
+		}
+	}
+}</script><script type="text/javascript">var TSSSB = {
+	call: function() {
+		return false;
+	}
+};</script><title>Smarsh Archiving &amp; Compliance | Slack App Directory</title><meta content="Slack" name="author"/><meta content="The Archiving Platform from Smarsh is a centralized, cloud-based platform providing a unified compliance and e-discovery workflow across the entire range of digital communications, including email, pu" name="description"/><link crossorigin="anonymous" href="https://a.slack-edge.com/ba6f824/style/rollup-slack_kit_legacy_adapters.css" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" rel="stylesheet" type="text/css"/><link crossorigin="anonymous" href="https://a.slack-edge.com/67ee06e/style/rollup-app_directory.css" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" rel="stylesheet" type="text/css"/><link crossorigin="anonymous" href="https://a.slack-edge.com/bv1-9/modern.vendor.b57145e.min.css" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" rel="stylesheet" type="text/css"/><link crossorigin="anonymous" href="https://a.slack-edge.com/bv1-9/application.52057bb.min.css" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" rel="stylesheet" type="text/css"/><link crossorigin="anonymous" href="https://a.slack-edge.com/bv1-9/app-directory.f1cb9a5.min.css" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" rel="stylesheet" type="text/css"/><link crossorigin="anonymous" href="https://a.slack-edge.com/e7e35af/style/rollup-slack_kit_helpers.css" id="slack_kit_helpers_stylesheet" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" rel="stylesheet" type="text/css"/><link crossorigin="anonymous" href="https://a.slack-edge.com/css/v5/style/page_atlassian_promo_banner.1a59cf5a0e644570def692ffd14d3df009ccc0f1.css" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" rel="stylesheet" type="text/css"/><link crossorigin="anonymous" href="https://a.slack-edge.com/e06451a/style/libs/lato-2-compressed.css" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" rel="stylesheet" type="text/css"/><meta content="website" property="og:type"/><meta content="Slack" property="og:site_name"/><meta content="Smarsh Archiving &amp; Compliance" property="og:title"/><meta content="https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2017-01-27/133702307938_63dcdb3aa2ae4e9bb9be_72.png" property="og:image"/><meta content="The Archiving Platform from Smarsh is a centralized, cloud-based platform providing a unified compliance and e-discovery workflow across the entire range of digital communications, including email, pu" property="og:description"/><meta content="https://slack.com/apps/A3XLN0LPL-smarsh-archiving-compliance" property="og:url"/><link href="https://a.slack-edge.com/80588/marketing/img/meta/favicon-32.png" id="favicon" rel="shortcut icon" sizes="16x16 32x32 48x48" type="image/png"/></head><body class="p-app_directory_app_detaildeprecated"><script> var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0); if (w > 1440) document.querySelector('body').classList.add('widescreen');</script><input data-app="1" data-id="A3XLN0LPL" data-is-directory-published="true" data-is-distributed="true" data-is-installed="false" data-is-slack-integration="false" type="hidden"/><input id="is_signed_in" type="hidden" value="false"/><input id="user_can_manage_apps" type="hidden" value="false"/><div id="apps-page-app-element"><header class="" data-js="js-apps-header"><nav class="apps_nav top persistent display_flex justify_content_between large_left_padding large_right_padding"><div class="display_flex align_items_center"><a class="logo" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_logo" data-qa="logo" href="/apps" title="Slack"></a></div><div class="flex_one display_flex justify_content_center align_items_center"><div class="page_apps_directory_home__search page_apps_directory_home__search--header search_input_container position_relative"><form action="/apps/search" class="apps_search_form"><label aria-label="Search App Directory" class="no_margin" for="apps_nav_search_input"></label><input autocomplete="off" class="apps_search_input apps_search_input__header search_input small no_bottom_margin" data-search="app_directory_header" disabled="" id="apps_nav_search_input" name="q" placeholder="Search App Directory" type="text"/><i class="ts_icon ts_icon_search icon_search icon_search_input"></i><img class="icon_loading" src="https://a.slack-edge.com/80588/img/loading.gif"/></form></div></div><div class="menu_actions"><ul class="small_left_margin"><li><a class="active" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_browse" data-qa="browse" href="/apps">Browse</a></li> <li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_manage" data-qa="configure" href="/apps/manage">Manage</a></li> <li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_build" data-qa="build_your_own" href="https://api.slack.com/">Build</a></li> <li><a class="" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_sign_in" data-gtm-click="optout_nav_signin" href="/signin?redir=/apps/A3XLN0LPL-smarsh-archiving-compliance">Sign in</a></li> <li><a class="btn btn_outline neutral_white_bg show_outline create_workspace" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=appdir_nav_create_workspace_loggedout" data-gtm-click="SignUp" href="/get-started#/create">Create Workspace</a></li></ul></div><div class="mobile_menu_actions"><h3 class="no_bottom_margin"><ts-icon class="ts_icon_search very_small_top_margin small_right_margin" id="mobile_search_open"></ts-icon></h3><ul><li><a class="transparent_bg" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_mobile_menu_open" href="#" id="mobile_menu_open"><ts-icon class="ts_icon_grabby_patty"></ts-icon></a></li></ul></div><div class="hidden neutral_white_bg position_absolute full_width full_height display_flex align_items_center left_padding right_padding" id="mobile_search"><h3 class="no_bottom_margin"><ts-icon class="ts_icon_search very_small_top_margin right_margin"></ts-icon></h3><form action="/apps/search" class="flex_one apps_search_form"><input autocomplete="off" class="mobile_search_input no_bottom_margin" name="q" placeholder="Search App Directory" type="text"/></form><ts-icon class="ts_icon_times_circle very_small_top_margin left_margin" id="mobile_search_close"></ts-icon></div></nav><div class="alert_page alert_warning is_ephemeral hidden" id="apps_alert"><ts-icon class="ts_icon ts_icon_warning"></ts-icon><span class="error_msg">Hmm, that didn't work. Try again?</span></div></header><nav class="apps_nav mobile_menu cool_purple_bg"><div class="mobile_menu_wrapper"><div class="mobile_menu_header"><a class="logo" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_logo" href="/apps" title="Slack"></a><h1 class="nav_title reset_letter_spacing black"><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_title" href="/apps">App Directory</a></h1><a aria-label="close" class="close" href="#"><ts-icon class="ts_icon ts_icon_times"></ts-icon></a></div><ul><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_browse" href="/apps">Browse</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_manage" href="/apps/manage">Manage</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_build" href="https://api.slack.com/">Build</a></li></ul><div class="mobile_menu_footer"><ul><li><a class="mobile_menu_teams_list_link" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=nav_sign_in" data-gtm-click="optout_nav_signin" href="https://slack.com/signin?redir=/apps/A3XLN0LPL-smarsh-archiving-compliance"><ts-icon class="ts_icon small float_none team_icon ts_icon_plus default signup_icon"></ts-icon><span class="switcher_label">Sign in to another workspace</span></a></li></ul></div></div></nav><div id="page"><div data-qa="page_contents" id="page_contents"><div class="margin_bottom_100"><a class="display_flex" href="/apps"><ts-icon class="ts_icon_chevron_medium_left"></ts-icon><span>Browse Apps</span></a></div><div class="p-wrapper"><div class="p-sidebar"><div class="app_icon_container align_center margin_bottom_125"><img class="large_app_icon" src="https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2017-01-27/133702307938_63dcdb3aa2ae4e9bb9be_512.png"/></div><div class="small_bottom_margin hidden p-app_info_install_buttons p-app_info--hide_on_tablet"><a class="p-app_detail_btn c-button c-button--large full_width c-button--primary" data-js="sign_in" data-qa="manage-requests-button" href="/signin?redir=/apps/A3XLN0LPL">Sign In to install</a><a class="p-app_detail_btn c-button c-button--large full_width c-button--outline margin_top_75" data-js="learn_more" href="http://www.smarsh.com/im-archiving/slack">Learn More</a></div><div class="p-app_info--hide_on_tablet"><div data-automount-component="AppDirectoryAdditionalInfo" data-automount-props='{"appId":"A3XLN0LPL","supportedLanguages":[],"pricing":null,"supportLink":"http:\/\/www.smarsh.com\/support","devWebsiteLink":"http:\/\/www.smarsh.com\/im-archiving\/slack","supportEmail":"support@smarsh.com","privacyPolicyLink":"http:\/\/www.smarsh.com\/legal-website-privacy-policy","categories":[{"id":14540943345,"name":"Security &amp; Compliance","description":"Connect your monitoring and security tools to Slack so your team is always in the loop. Ensure content shared in Slack is backed-up, archived, and secure at all times with compliance and DLP apps for Slack Grid teams. ","is_displayed":true,"is_featured":false,"display_order":240,"slug":"At0EFWTRA5-security-compliance"}],"showReportApp":true,"reportAppLink":"\/help\/requests\/new?app_id=A3XLN0LPL","missionControlLink":""}'></div></div></div><div class="p-content"><h2 class="p-app_info_title margin_bottom_150" data-qa="Smarsh Archiving &amp; Compliance">Smarsh Archiving &amp; Compliance</h2><div class="mobile_app_actions bottom_margin top_margin hidden p-app_info_install_buttons p-app_info--show_on_tablet"><a class="p-app_detail_btn c-button c-button--large full_width c-button--primary" data-js="sign_in" data-qa="manage-requests-button" href="/signin?redir=/apps/A3XLN0LPL">Sign In to install</a><a class="p-app_detail_btn c-button c-button--large full_width c-button--outline margin_top_75" data-js="learn_more" href="http://www.smarsh.com/im-archiving/slack">Learn More</a></div><div class="p-app_info_loading medium_bottom_margin large_top_padding large_bottom_padding"><div class="infinite_spinner infinite_spinner_medium"><svg class="infinite_spinner_spinner infinite_spinner_fast" viewbox="0 0 100 100"><circle class="infinite_spinner_bg" cx="50%" cy="50%" r="35"></circle><circle class="infinite_spinner_path infinite_spinner_blue" cx="50%" cy="50%" r="35"></circle></svg><svg class="infinite_spinner_spinner infinite_spinner_tail infinite_spinner_fast" viewbox="0 0 100 100"><circle class="infinite_spinner_path infinite_spinner_blue" cx="50%" cy="50%" r="35"></circle></svg></div></div><div class="p-app_info medium_bottom_margin hidden"><div></div><div class="p-app_info_tabs c-tabs__tab_menu c-tabs__tab_menu--plastic" id="js-app_info_tabs" role="tablist"><a class="c-tabs__tab c-tabs__tab--plastic js-tab" data-qa="more_info_tab" href="#panel_more_info" id="js-more-info-tab" role="tab">Description</a> <a class="c-tabs__tab c-tabs__tab--plastic js-tab" data-qa="settings_tab" href="#panel_settings" id="js-settings-tab" role="tab">Permissions</a><a class="c-tabs__tab c-tabs__tab--plastic js-tab" data-qa="security_compliance_tab" href="#panel_security_compliance" id="js-security-compliance-tab" role="tab">Security &amp; Compliance</a></div><div class="c-tabs__tab_panels"><div class="c-tabs__tab_panel js-panel" id="panel_more_info" role="tabpanel"><div data-automount-component="AppDirectoryCarousel" data-automount-props='{"appId":"A3XLN0LPL","images":[],"videoUrl":null,"videoId":null,"appName":"Smarsh Archiving &amp; Compliance"}'></div><div class="p-app_description medium_top_margin"><div class="medium_bottom_margin"><div class="tsf_output emoji_replace_on_load">The Archiving Platform from Smarsh is a centralized, cloud-based platform providing a unified compliance and e-discovery workflow across the entire range of digital communications, including email, public and enterprise social media, websites, instant messaging and mobile messaging.<span class="para_break"></span>For Slack Enterprise Grid customers, content is automatically captured, indexed and made ready for instant search via an API integration with The Archiving Platform from Smarsh.<span class="para_break"></span>Slack Enterprise Grid and Smarsh joint customers benefit from an integrated solution that meets electronic communications compliance requirements when using Slack in highly regulated or litigious industries, including financial services, the public sector, lending/mortgage and others.<span class="para_break"></span>Support for Slack Enterprise Grid content can be easily added to an existing deployment of The Archiving Platform alongside all other types of archived content – eliminating the need for customers to seek a separate archiving solution for Slack.<span class="para_break"></span>A Smarsh Archiving Platform account is required to install this app. To sign up for services go to <a href="https://www.smarsh.com/sales-contact">https://www.smarsh.com/sales-contact</a>. <span class="para_break"></span>Existing clients please visit <a href="https://central.smarsh.com/s/article/How-do-I-enable-Slack-archiving">https://central.smarsh.com/s/article/How-do-I-enable-Slack-archiving</a> for application installation instructions.</div></div></div></div><div class="c-tabs__tab_panel js-panel" id="panel_features" role="tabpanel"><div data-automount-component="AppDirectoryFeatures" data-automount-props='{"appId":"A3XLN0LPL","appName":"Smarsh Archiving &amp; Compliance","appIcon":"https:\/\/slack-files2.s3-us-west-2.amazonaws.com\/avatars\/2017-01-27\/133702307938_63dcdb3aa2ae4e9bb9be_32.png","globalShortcuts":[],"messageShortcuts":[],"workflowSteps":[],"slashCommands":[],"isCallsApp":false,"isOrgReadyApp":false}'></div></div><div class="c-tabs__tab_panel js-panel" id="panel_settings" role="tabpanel"><div class="yolk_orange bold medium_top_margin right_margin align_right hidden" id="status_msg"></div><div class="sk_white_bg rounded padding_200 margin_top_150"><h3 class="p-detail_permissions_label bold">Permissions</h3><div data-automount-component="ScopeInfo" data-automount-props='{"scopeInfo":{"actions":{"heading":"Smarsh Archiving &amp; Compliance will be able to do:","secondary_groups":{"admin_actions":{"heading":"Administer Slack for your organization","scopes_info":[{"scopes":["discovery:read"],"description":"View all of your organization\u2019s messages (including all private channels and direct messages), as well as your organization\u2019s files"}]}}}},"smallHeadings":true}'><div class="p-scope_info"><section class="p-scope_info__section"><h3 class="p-scope_info__section_heading--small">Smarsh Archiving &amp; Compliance will be able to do:</h3><div><div class="p-scope_info__group"><div class="p-scope_info__group_icon"><i class="c-icon c-icon--cog-o"></i></div><div class="p-scope_info__group_container"><button class="c-button-unstyled p-scope_info__group_toggle" type="button"><span class="p-scope_info__group_heading">Administer Slack for your organization</span><i class="c-icon c-icon--caret-right c-icon--inline margin_left_75"></i></button></div></div></div></section></div></div></div><div class="clearfix"></div></div><div class="c-tabs__tab_panel js-panel" id="panel_security_compliance" role="tabpanel"><div class="margin_top_150 sk_white_bg rounded"><div class="padding_200"><div data-automount-component="AppDirectoryScopes" data-automount-props='{"title":"Scopes","appId":"A3XLN0LPL","accordions":[{"icon":"user","title":"Smarsh Archiving &amp; Compliance has 1 User Token Scopes","body":"discovery:read","dataQa":"user-token-scopes-accordion"}]}'></div></div></div></div></div></div><div class="p-app_info--show_on_tablet"><div data-automount-component="AppDirectoryAdditionalInfo" data-automount-props='{"appId":"A3XLN0LPL","supportedLanguages":[],"pricing":null,"supportLink":"http:\/\/www.smarsh.com\/support","devWebsiteLink":"http:\/\/www.smarsh.com\/im-archiving\/slack","supportEmail":"support@smarsh.com","privacyPolicyLink":"http:\/\/www.smarsh.com\/legal-website-privacy-policy","categories":[{"id":14540943345,"name":"Security &amp; Compliance","description":"Connect your monitoring and security tools to Slack so your team is always in the loop. Ensure content shared in Slack is backed-up, archived, and secure at all times with compliance and DLP apps for Slack Grid teams. ","is_displayed":true,"is_featured":false,"display_order":240,"slug":"At0EFWTRA5-security-compliance"}],"showReportApp":true,"reportAppLink":"\/help\/requests\/new?app_id=A3XLN0LPL","missionControlLink":""}'></div></div></div></div></div><div id="overlay"></div></div></div><div data-automount-component="ToastContainer"></div><div data-automount-component="ModalContainer"></div><footer data-qa="footer"><section class="links"><div class="grid"><div class="col span_1_of_4 nav_col"><ul><li class="cat_1">Using Slack</li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_product" data-qa="product_footer" href="/is">Product</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_enterprise" data-qa="enterprise_footer" href="/enterprise">Enterprise</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_pricing" data-qa="pricing_footer" href="/pricing?ui_step=28&amp;ui_element=5">Pricing</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_support" data-qa="support_footer" href="https://get.slack.help/hc/en-us">Support</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_getting_started" data-qa="getting_started" href="/guides">Slack Guides</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_app_directory" data-qa="app_directory" href="/apps">App Directory</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_api" data-qa="api" href="https://api.slack.com/">API</a></li></ul></div><div class="col span_1_of_4 nav_col"><ul><li class="cat_2">Slack <ts-icon class="ts_icon_heart"></ts-icon></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_jobs" data-qa="jobs" href="/jobs">Jobs</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_customers" data-qa="customers" href="/customers">Customers</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_developers" data-qa="developers" href="/developers">Developers</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_events" data-qa="events" href="/events">Events</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_blog" data-qa="blog_footer" href="https://slackhq.com/">Blog</a></li></ul></div><div class="col span_1_of_4 nav_col"><ul><li class="cat_3">Legal</li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_privacy" data-qa="privacy" href="/privacy-policy">Privacy</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_security" data-qa="security" href="/security">Security</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_tos" data-qa="tos" href="/terms-of-service">Terms of Service</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_policies" data-qa="policies" href="/policies">Policies</a></li></ul></div><div class="col span_1_of_4 nav_col"><ul><li class="cat_4">Handy Links</li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_downloads" data-qa="downloads" href="/downloads">Download desktop app</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_downloads_mobile" data-qa="downloads_mobile" href="/downloads">Download mobile app</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_brand_guidelines" data-qa="brand_guidelines" href="/brand-guidelines">Brand Guidelines</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_slack_at_work" data-qa="slack_at_work" href="https://slackatwork.com">Slack at Work</a></li><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_status" data-qa="status" href="https://status.slack.com/">Status</a></li></ul></div></div></section><div class="footnote"><section><a aria-label="Slack homepage" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_slack_icon" href="https://slack.com"><ts-icon aria-hidden="" class="c-icon--slack"></ts-icon></a><ul><li><a data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_contact_us" data-qa="contact_us" href="/help/contact">Contact Us</a></li><li><a aria-label="Slack on Twitter" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_slack_twitter" data-qa="slack_twitter" href="https://twitter.com/SlackHQ"><ts-icon aria-hidden="" class="ts_icon_twitter"></ts-icon></a></li><li class="yt"><a aria-label="Slack on YouTube" data-clog-event="WEBSITE_CLICK" data-clog-params="click_target=footer_slack_youtube" data-qa="slack_youtube" href="https://www.youtube.com/channel/UCY3YECgeBcLCzIrFLP4gblw"><ts-icon aria-hidden="" class="ts_icon_youtube"></ts-icon></a></li></ul></section></div></footer><script type="text/javascript">
+/**
+ * A placeholder function that the build script uses to
+ * replace file paths with their CDN versions.
+ *
+ * @param {String} file_path - File path
+ * @returns {String}
+ */
+function vvv(file_path) {
+		 var vvv_warning = 'You cannot use vvv on dynamic values. Please make sure you only pass in static file paths.'; if (window.TS && window.TS.warn) { window.TS.warn(vvv_warning); } else { console.warn(vvv_warning); } 
+	return file_path;
+}
+
+var cdn_url = "https:\/\/a.slack-edge.com";
+var vvv_abs_url = "https:\/\/slack.com\/";
+var inc_js_setup_data = {
+	emoji_sheets: {
+		apple: 'https://a.slack-edge.com/80588/img/emoji_2017_12_06/sheet_apple_64_indexed_256.png',
+		google: 'https://a.slack-edge.com/80588/img/emoji_2017_12_06/sheet_google_64_indexed_256.png',
+	},
+};
+</script><script type="text/javascript">	// common boot_data
+	var boot_data = {"api_url":"\/api\/","app":"web","user_id":null,"team_id":"T00000000","visitor_uid":"9fn5w0h74c9b4iq8w94y2p30i","no_login":true,"version_ts":1623856347,"version_uid":"5a2e267fe79ec62d6bc1e4579be011b05b8850dd","cache_version":"v21-nomad","cache_ts_version":"v2-bunny","redir_domain":"slack-redir.net","signin_url":"https:\/\/slack.com\/signin","abs_root_url":"https:\/\/slack.com\/","team_url":"","image_proxy_url":"https:\/\/slack-imgs.com\/","beacon_timing_url":"https:\/\/slack.com\/beacon\/timing","beacon_error_url":"https:\/\/slack.com\/beacon\/error","clog_url":"clog\/track\/","api_token":"","vvv_paths":{"lz_string":"https:\/\/a.slack-edge.com\/bv1-9\/lz-string-1.4.4.worker.8de1b00d670ff3dc706a0.js","codemirror":"https:\/\/a.slack-edge.com\/bv1-9\/codemirror.min.350605e945cf98de466f.min.js","codemirror_addon_simple":"https:\/\/a.slack-edge.com\/bv1-9\/codemirror_simple.8ad91930e7e2b8a7adad.min.js","codemirror_load":"https:\/\/a.slack-edge.com\/bv1-9\/codemirror_load.9093949a8393a3a383f4.min.js","codemirror_files":{"javascript":"https:\/\/a.slack-edge.com\/bv1-9\/codemirror_lang_javascript.28bdabb3e589b97eccb5.min.js"}},"notification_sounds":[{"value":"b2.mp3","label":"Ding","url":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/b2.mp3","url_ogg":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/b2.ogg"},{"value":"animal_stick.mp3","label":"Boing","url":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/animal_stick.mp3","url_ogg":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/animal_stick.ogg"},{"value":"been_tree.mp3","label":"Drop","url":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/been_tree.mp3","url_ogg":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/been_tree.ogg"},{"value":"complete_quest_requirement.mp3","label":"Ta-da","url":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/complete_quest_requirement.mp3","url_ogg":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/complete_quest_requirement.ogg"},{"value":"confirm_delivery.mp3","label":"Plink","url":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/confirm_delivery.mp3","url_ogg":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/confirm_delivery.ogg"},{"value":"flitterbug.mp3","label":"Wow","url":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/flitterbug.mp3","url_ogg":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/flitterbug.ogg"},{"value":"here_you_go_lighter.mp3","label":"Here you go","url":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/here_you_go_lighter.mp3","url_ogg":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/here_you_go_lighter.ogg"},{"value":"hi_flowers_hit.mp3","label":"Hi","url":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/hi_flowers_hit.mp3","url_ogg":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/hi_flowers_hit.ogg"},{"value":"knock_brush.mp3","label":"Knock Brush","url":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/knock_brush.mp3","url_ogg":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/knock_brush.ogg"},{"value":"save_and_checkout.mp3","label":"Whoa!","url":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/save_and_checkout.mp3","url_ogg":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/save_and_checkout.ogg"},{"value":"item_pickup.mp3","label":"Yoink","url":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/item_pickup.mp3","url_ogg":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/item_pickup.ogg"},{"value":"hummus.mp3","label":"Hummus","url":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/hummus.mp3","url_ogg":"https:\/\/a.slack-edge.com\/58f5096\/sounds\/push\/hummus.ogg"},{"value":"none","label":"None"}],"alert_sounds":[{"value":"frog.mp3","label":"Frog","url":"https:\/\/slack.global.ssl.fastly.net\/58f5096\/sounds\/frog.mp3"}],"call_sounds":[{"value":"call\/alert_v2.mp3","label":"Alert","url":"https:\/\/slack.global.ssl.fastly.net\/58f5096\/sounds\/call\/alert_v2.mp3"},{"value":"call\/incoming_ring_v2.mp3","label":"Incoming ring","url":"https:\/\/slack.global.ssl.fastly.net\/58f5096\/sounds\/call\/incoming_ring_v2.mp3"},{"value":"call\/outgoing_ring_v2.mp3","label":"Outgoing ring","url":"https:\/\/slack.global.ssl.fastly.net\/58f5096\/sounds\/call\/outgoing_ring_v2.mp3"},{"value":"call\/pop_v2.mp3","label":"Incoming reaction","url":"https:\/\/slack.global.ssl.fastly.net\/58f5096\/sounds\/call\/pop_v2.mp3"},{"value":"call\/they_left_call_v2.mp3","label":"They left call","url":"https:\/\/slack.global.ssl.fastly.net\/58f5096\/sounds\/call\/they_left_call_v2.mp3"},{"value":"call\/you_left_call_v2.mp3","label":"You left call","url":"https:\/\/slack.global.ssl.fastly.net\/58f5096\/sounds\/call\/you_left_call_v2.mp3"},{"value":"call\/they_joined_call_v2.mp3","label":"They joined call","url":"https:\/\/slack.global.ssl.fastly.net\/58f5096\/sounds\/call\/they_joined_call_v2.mp3"},{"value":"call\/you_joined_call_v2.mp3","label":"You joined call","url":"https:\/\/slack.global.ssl.fastly.net\/58f5096\/sounds\/call\/you_joined_call_v2.mp3"},{"value":"call\/confirmation_v2.mp3","label":"Confirmation","url":"https:\/\/slack.global.ssl.fastly.net\/58f5096\/sounds\/call\/confirmation_v2.mp3"}],"call_sounds_version":"v2","img":{"app_icon":"https:\/\/a.slack-edge.com\/80588\/img\/slack_growl_icon_vogue.png"},"page_needs_enterprise":false,"page_needs_custom_emoji":false,"is_deprecated_webclient_browser":false,"is_unsupported_webclient_browser":true,"default_tz":"America\/Los_Angeles","feature_hermes_function_installation":false,"feature_builder_manage_many_workflows":true,"feature_builder_question_type_date":false,"feature_builder_story_step":false,"feature_builder_multistep_collaborators_modal":true,"feature_builder_message_button_helper_text":true,"feature_builder_extensions":true,"feature_builder_extension_steps_pref":true,"feature_apps_can_submit_with_workflow_steps":true,"feature_builder_unique_trigger_id_output":false,"feature_builder_feedback_button":false,"feature_builder_message_step_rich_text":true,"feature_chime_access_check":false,"feature_app_views_v1":true,"feature_audit_logs_view":false,"feature_audit_logs_view_workspace":false,"feature_pronouns_in_profile":false,"feature_builder_disable_global_triggers":true,"feature_workflow_builder_enabled_org_setting":true,"feature_builder_can_access":true,"feature_always_show_archive_channel_option":true,"feature_org_dashboard_gantry_access":true,"feature_org_dash_gantry_redirect":true,"feature_info_barriers":true,"feature_day2_share_modal":true,"feature_lock_thread_translations":false,"feature_context_bar_tz_issues":false,"feature_tinyspeck":false,"feature_end_dm":true,"feature_scdm_compose_copy_paste_multiple_emails":true,"feature_scdm_admin_settings_prefs":false,"feature_olug_esc_channels_work":true,"feature_olug_remove_required_workspace_setting":false,"feature_data_table_in_org_level_user_groups":false,"feature_browser_deprecation_team_site_org_dash":false,"feature_org_settings_m11n":false,"feature_deprecate_get_member_by_name":false,"feature_unknown_messages":true,"feature_add_message_perf":false,"feature_fix_custom_emoji_errors":true,"feature_modern_delete_file":true,"feature_copy_channel_link":true,"feature_collapse_reactions":true,"feature_full_profile_link":true,"feature_print_pdf":false,"feature_safari10_deprecation":true,"feature_safari10_deprecation_modal":true,"feature_safari10_deprecation_block":true,"feature_desktop460_deprecation":false,"feature_desktop460_deprecation_block":false,"feature_email_workflow":false,"feature_wider_reaction_tip":false,"feature_file_picker_search_i18n":false,"feature_show_replies_immediately":true,"feature_composer_email_classification":false,"feature_amazon_a11y_custom_status_emoji":true,"feature_amazon_a11y_activity_labels":true,"feature_file_threads":true,"feature_broadcast_indicator":true,"feature_new_replies_after_bcast":true,"feature_sonic_emoji":true,"feature_emoji_12":false,"feature_email_ingestion":false,"feature_attachments_inline":false,"feature_remove_actions_from_sidebar":false,"feature_shortcuts_v2_education":false,"feature_pad_1534":false,"feature_app_launcher_search_pagination":false,"feature_compose_flow":true,"feature_compose_flow_xws":true,"feature_desktop_symptom_events":false,"feature_data_residency_debugging":false,"feature_new_subteam_linked_channel_limit":true,"feature_subteam_user_limit":true,"feature_ent_admin_approved_apps_v2":true,"feature_dashboard_sortable_lists":false,"feature_sk_loading_button_motions":true,"feature_sk_base_icon":true,"feature_sk_required_arialabel":false,"feature_ce_eng_search_demo":false,"feature_ce_eng_help_vitess":false,"feature_trials_contact_topic":true,"feature_trials_contact_topic_from_app":true,"feature_app_dir_phoenix":false,"feature_condition_block":false,"feature_shared_channel_bot_tokens":false,"feature_shared_channels_user_profile_extras_xws":false,"feature_shared_channels_multi_org_mpim":true,"feature_shared_channels_multi_org_mpim_fe":true,"feature_find_an_admin_disconnect_explainer":false,"feature_shared_channels_multi_org_invites_be":false,"feature_shared_channels_multi_org_qa_limit_override":false,"feature_external_limited_members_dev":false,"feature_ccm_esc":false,"feature_remove_double_rings":false,"feature_remove_double_diamonds":false,"feature_channels_view_in_msc":false,"feature_shared_channels_emoji_delight":true,"feature_gdpr_user_join_tos":true,"feature_user_invite_tos_april_2018":true,"feature_enrich_fetch_team_user_from_db":true,"feature_roles_in_member_details":false,"feature_assign_roles_ui_refresh":false,"feature_channel_mgmt_message_count":false,"feature_user_prefs_fanout":true,"feature_ui_generator_updates":true,"feature_spacesuit_revamp":false,"feature_ui_generator_q1":false,"feature_cust_acq_i18n_tweaks":false,"feature_unlock_work_phase_one":true,"feature_salesforce_web_updates":false,"feature_proj_accessibility_lp":false,"feature_whitelist_zendesk_chat_widget":false,"feature_use_imgproxy_resizing":true,"feature_share_mention_comment_cleanup":false,"feature_boards_in_dev":false,"feature_disable_bk_in_thread":false,"feature_new_locale_toast":true,"feature_retro_thread_channel_reply":false,"feature_channel_exports":false,"feature_docs_mentions_and_channels":false,"feature_flag_message_roles":false,"feature_follow_thread_copy_update":true,"feature_calls_survey_request_response":true,"feature_token_ip_whitelist":true,"feature_sidebar_theme_undo":true,"feature_allow_intra_word_formatting":true,"feature_private_channel_membership_limit":false,"feature_slim_scrollbar":false,"feature_primary_search":false,"feature_file_browser_v2":false,"feature_react_messages":true,"feature_edge_upload_proxy_check":false,"feature_unread_counts_delay":true,"feature_legacy_file_upload_analytics":true,"feature_mpdm_limit_channel_creation":false,"feature_snippet_modes_i18n":false,"feature_ekm_message_revocation_polling_test":false,"feature_team_admins_list_api":true,"feature_ms_latest":true,"feature_guests_use_entitlements":true,"feature_rooms_join_api":true,"feature_rooms_join_url":false,"feature_calls_sip_integration_labels":false,"feature_tasks_v1_copy":false,"feature_custom_status_calendar_sync_copy":true,"feature_custom_status_calendar_sync":false,"feature_mask_undocumented_errors":false,"feature_app_actions_admin_pages":true,"feature_app_views_reminders":true,"feature_reminders_org_shard":false,"feature_reminders_grid_migrations_org_shard":false,"feature_blocks_reminders_list":false,"feature_share_message_via_message_blocks":false,"feature_message_blocks":false,"feature_silence_app_dms":false,"feature_set_tz_automatically":true,"feature_confirm_clear_all_unreads_pref":true,"feature_block_mounts":true,"feature_attachments_v2":true,"feature_group_block":false,"feature_show_block_kit_in_share_dialogs":false,"feature_block_kit_user_block":false,"feature_block_kit_table":false,"feature_password_element":true,"feature_header_block":true,"feature_input_blocks_in_messages":true,"feature_multiselects_in_actions_block":false,"feature_domain_verification":false,"feature_block_kit_range_datepicker":false,"feature_delete_app_homes_associated_with_deleted_service":true,"feature_soft_delete_app_homes_on_user_deactivation":false,"feature_block_kit_timepicker":true,"feature_block_kit_timepicker_remind":true,"feature_block_kit_datepicker_input":true,"feature_block_kit_remount_on_update":true,"feature_add_app_home_team_name":true,"feature_beacon_js_errors":false,"feature_user_app_disable_speed_bump":true,"feature_degraded_rtm_always_fails":false,"feature_apps_manage_permissions_scope_changes":true,"feature_reminder_cross_workspace":true,"feature_p2p":false,"feature_new_reactions":true,"feature_pages_example":false,"feature_sonic_video_placeholder":true,"feature_iap1":false,"feature_ia_ga":true,"feature_ia_debug_off":false,"feature_ia_i18n":true,"feature_ia_themes":true,"feature_ia_member_profile":true,"feature_scdm_collapse_unfurls":false,"feature_workspace_scim_management":false,"feature_turn_mpdm_notifs_on":true,"feature_desktop_reload_on_generic_error":true,"feature_desktop_extend_app_menu":false,"feature_desktop_restart_service_worker":false,"feature_desktop_system_notification_playback":false,"feature_dolores":false,"feature_desktop_force_production_channel":false,"feature_desktop_logs_upload":false,"feature_macos_disable_hw":true,"feature_create_private_c_channels":true,"feature_managed_connections_grid_org_dash":false,"feature_managed_connections_grid_fe":false,"feature_slack_connect_approve_new_channels":false,"feature_slack_connect_approve_new_channels_early_access":false,"feature_slack_connect_approve_new_channels_new_teams":false,"feature_status_expiration":true,"feature_bots_not_members":true,"feature_wta_stop_creation":true,"feature_platform_deprecations_fe":true,"feature_app_manifest_open_beta":true,"feature_app_config_collaborators_gantry":true,"feature_no_socket_mode":false,"feature_no_callback_id_edit":false,"feature_siws_idl_transfer":true,"feature_admin_email_change_confirm":false,"feature_channel_actions":true,"feature_screen_share_needs_aero":false,"feature_emoji_by_id":true,"feature_deactivated_apps_tab_apps_manage_gantry_v2":true,"feature_scg_conversion_channels":true,"feature_enterprise_retention_allow_override_on_org_level_channels":false,"feature_legal_holds_org_dashboard":true,"feature_legal_holds_bulk_multi_select":true,"feature_track_time_spent":true,"feature_channel_invite_tokenization":true,"feature_imports_cancel":true,"feature_email_workobject_ui":false,"feature_email_notify":false,"feature_improved_email_rendering":true,"feature_mini_browser_translations":false,"feature_unfurl_metadata":false,"feature_paperclip_coachmark_experiments":true,"feature_plus_menu_add_apps_link":false,"feature_recent_files_omnipicker":false,"feature_recent_desktop_files":true,"feature_huddles_i18n":false,"feature_connect_deeplink":false,"feature_cea_allowlist_changes":false,"feature_cea_channel_management":true,"feature_cea_admin_controls":false,"feature_cea_allowlist_changes_plus":false,"feature_link_protocol_beta":true,"feature_checkout_force_into_legacy":false,"feature_ia_context_menus":false,"feature_ia_layout":false,"feature_misc_ia_a11y_translations":false,"feature_threaded_call_block":false,"feature_enable_read_time_validations_for_shortcuts":true,"feature_slack_message_attachment_tooltip":false,"feature_enterprise_mobile_device_check":true,"feature_new_copy_for_identity_basic":false,"feature_shared_channel_invites_v2":true,"feature_paid_onboarding_pageupdate":true,"feature_trace_webapp_init":true,"feature_trace_jq_init":true,"feature_seven_days_email_update":true,"feature_stripe_completely_down_banner":false,"feature_fair_billing_detail_invoice_statements":false,"feature_checkout_zip_autocomplete_translations":true,"feature_billing_member_email_updates":false,"feature_rename_plan_name":true,"feature_rename_plan_zendesk":false,"feature_uae_tax_id_collection":true,"feature_chile_tax_id_collection":true,"feature_ksa_tax_id_collection":true,"feature_indonesia_tax_change_notification":false,"feature_indonesia_tax_assessment":false,"feature_workspace_level_analytics_in_team_site":false,"feature_analytics_custom_date_ranges":false,"feature_analytics_header_redesign":true,"feature_messages_from_apps_analytics":false,"feature_org_level_apps":true,"feature_channel_sections":true,"feature_channel_sections_sidebar_behavior_ui":false,"feature_analytics_scim_fields_paid":false,"feature_migrate_google_directory_apis":true,"feature_show_email_forwarded_by":false,"feature_feature_builder_sk_required_arialabel":false,"feature_builder_workflow_activity":true,"feature_builder_export_form_csv_admin":true,"feature_download_finder_update":true,"feature_share_modal_dialog":true,"feature_block_files_esc":true,"feature_from_another_team_labels":false,"feature_app_directory_mon_intent":true,"feature_hc_ces_survey":false,"feature_parsec_methods":false,"feature_invite_new_error":true,"feature_soul_searchers":false,"feature_snd_query_refinements":true,"feature_primary_owner_consistent_roles":true,"feature_locale_it_IT":true,"feature_locale_ko_KR":true,"feature_locale_ru_RU":false,"feature_locale_zh_CN":true,"feature_locale_zh_TW":true,"feature_mpdm_audience_expansion":true,"feature_ce_eng_search_zendesk_api":false,"feature_newxp_3795":false,"feature_new_notifications_string":false,"feature_msc_button_for_slackbot_msg":false,"feature_refine_your_search_i18n":true,"feature_idr_s3_files_sharded_backfill":true,"feature_xws_user_groups_selector":true,"feature_context_menu_keyboard_shortcut":true,"feature_announcer_api":false,"feature_reacji_aria_announcements":false,"feature_search_aria_initial_state":true,"feature_free_trial_chat":true,"feature_invited_users_count":false,"feature_accessible_date_picker_select":false,"feature_universal_sidebar_prefs":false,"feature_file_upload_size_restricted":true,"feature_builder_improve_messaging":true,"feature_remove_email_preview_link":true,"feature_channel_unread_count_summary":false,"feature_desktop_enable_tslog":false,"feature_desktop_enable_sticky_notification_pref":false,"feature_ntlm_domain_approval_ui":false,"feature_animations_os_pref_sync":true,"feature_slack_connect_block_files_by_type":true,"feature_pagination_arrow_keys_i18n":true,"feature_email_determine_charset":true,"feature_windows7_deprecation":true,"feature_windows7_deprecation_modal":false,"feature_scan_files_for_malware":false,"feature_edu_416":true,"feature_no_deprecation_in_updater":false,"feature_mixed_results_related_i18n":false,"feature_new_multi_select":false,"feature_slack_connect_block_files_by_type_team_pref":true,"feature_user_prefers_paused_animations":false,"feature_grid_migration_relationships_metadata":false,"feature_ez_subscribe_v_1_stage_0":false,"feature_proj_webpage_speed_improvements":false,"feature_proj_webpage_speed_improvements_cls":true,"feature_pea_domain_allowlist":true,"client_logs":{"0":{"numbers":["0"],"user_facing":false},"2":{"numbers":["2"],"user_facing":false},"4":{"numbers":["4"],"user_facing":false},"5":{"numbers":["5"],"user_facing":false},"23":{"numbers":["23"],"user_facing":false},"sounds":{"name":"sounds","numbers":["37"]},"37":{"name":"sounds","numbers":["37"],"user_facing":true},"47":{"numbers":["47"],"user_facing":false},"48":{"numbers":["48"],"user_facing":false},"Message History":{"name":"Message History","numbers":["58"]},"58":{"name":"Message History","numbers":["58"],"user_facing":true},"67":{"numbers":["67"],"user_facing":false},"72":{"numbers":["72"],"user_facing":false},"73":{"numbers":["73"],"user_facing":false},"82":{"numbers":["82"],"user_facing":false},"88":{"numbers":["88"],"user_facing":false},"91":{"numbers":["91"],"user_facing":false},"93":{"numbers":["93"],"user_facing":false},"96":{"numbers":["96"],"user_facing":false},"99":{"numbers":["99"],"user_facing":false},"Channel Marking (MS)":{"name":"Channel Marking (MS)","numbers":["141"]},"141":{"name":"Channel Marking (MS)","numbers":["141"],"user_facing":true},"Channel Marking (Client)":{"name":"Channel Marking (Client)","numbers":["142"]},"142":{"name":"Channel Marking (Client)","numbers":["142"],"user_facing":true},"365":{"numbers":["365"],"user_facing":false},"389":{"numbers":["389"],"user_facing":false},"438":{"numbers":["438"],"user_facing":false},"444":{"numbers":["444"],"user_facing":false},"481":{"numbers":["481"],"user_facing":false},"488":{"numbers":["488"],"user_facing":false},"529":{"numbers":["529"],"user_facing":false},"552":{"numbers":["552"],"user_facing":false},"dashboard":{"name":"dashboard","numbers":["666"]},"666":{"name":"dashboard","numbers":["666"],"user_facing":false},"667":{"numbers":["667"],"user_facing":false},"773":{"numbers":["773"],"user_facing":false},"777":{"numbers":["777"],"user_facing":false},"794":{"numbers":["794"],"user_facing":false},"Client Responsiveness":{"name":"Client Responsiveness","user_facing":false,"numbers":["808"]},"808":{"name":"Client Responsiveness","user_facing":false,"numbers":["808"]},"Message Pane Scrolling":{"name":"Message Pane Scrolling","numbers":["888"]},"888":{"name":"Message Pane Scrolling","numbers":["888"],"user_facing":true},"Unread banner and divider":{"name":"Unread banner and divider","numbers":["999"]},"999":{"name":"Unread banner and divider","numbers":["999"],"user_facing":true},"1000":{"numbers":["1000"],"user_facing":false},"Duplicate badges (desktop app icons)":{"name":"Duplicate badges (desktop app icons)","numbers":["1701"]},"1701":{"name":"Duplicate badges (desktop app icons)","numbers":["1701"],"user_facing":true},"Members":{"name":"Members","numbers":["1975"]},"1975":{"name":"Members","numbers":["1975"],"user_facing":true},"lazy loading":{"name":"lazy loading","numbers":["1989"]},"1989":{"name":"lazy loading","numbers":["1989"],"user_facing":true},"thin_channel_membership":{"name":"thin_channel_membership","numbers":["1990"]},"1990":{"name":"thin_channel_membership","numbers":["1990"],"user_facing":true},"stats":{"name":"stats","numbers":["1991"]},"1991":{"name":"stats","numbers":["1991"],"user_facing":true},"ms":{"name":"ms","numbers":["1996"]},"1996":{"name":"ms","numbers":["1996"],"user_facing":true},"shared_channels_connection":{"name":"shared_channels_connection","numbers":["1999"]},"1999":{"name":"shared_channels_connection","numbers":["1999"],"user_facing":false},"dnd":{"name":"dnd","numbers":["2002"]},"2002":{"name":"dnd","numbers":["2002"],"user_facing":true},"2003":{"numbers":["2003"],"user_facing":false},"Threads":{"name":"Threads","numbers":["2004"]},"2004":{"name":"Threads","numbers":["2004"],"user_facing":true},"2005":{"numbers":["2005"],"user_facing":false},"Reactions":{"name":"Reactions","numbers":["2006"]},"2006":{"name":"Reactions","numbers":["2006"],"user_facing":true},"TSSSB.focusTabAndSwitchToChannel":{"name":"TSSSB.focusTabAndSwitchToChannel","numbers":["2007"]},"2007":{"name":"TSSSB.focusTabAndSwitchToChannel","numbers":["2007"],"user_facing":false},"Presence Detection":{"name":"Presence Detection","numbers":["2017"]},"2017":{"name":"Presence Detection","numbers":["2017"],"user_facing":true},"mc_sibs":{"name":"mc_sibs","numbers":["9999"]},"9999":{"name":"mc_sibs","numbers":["9999"],"user_facing":false},"Member searching":{"name":"Member searching","numbers":["90211"]},"90211":{"name":"Member searching","numbers":["90211"],"user_facing":true},"98765":{"numbers":["98765"],"user_facing":false},"8675309":{"numbers":["8675309"],"user_facing":false}},"page_timing_label":"app_detail","other_accounts":[]};
+	boot_data.start_ms = Date.now();
+</script><script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-9/rollup-core_required_libs.a8f397a8e44a95104b51.min.js" type="text/javascript"></script><script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-9/modern.vendor.f736031b8e64357fe4e2.min.js" type="text/javascript"></script><script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-9/application.1a7818f5131103f3e59e.min.js" type="text/javascript"></script><script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-9/app-directory.51492117562eddad769d.min.js" type="text/javascript"></script><script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-9/rollup-core_required_ts.1735c0b9dc4ca7fab5f8.min.js" type="text/javascript"></script><script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-9/TS.web.82a87b83fe2406b6d704.min.js" type="text/javascript"></script><script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-9/rollup-core_web.746d44ec1a9b72364054.min.js" type="text/javascript"></script><script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-9/rollup-secondary_a_required.0f0512ff7f49faa22555.min.js" type="text/javascript"></script><script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-9/rollup-secondary_b_required.a1372081cfa4fa64b26c.min.js" type="text/javascript"></script><script type="text/javascript">TS.boot(boot_data);</script><script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-9/TS.web.app_detail.43cbaddc9d60b88808fd.min.js" type="text/javascript"></script><script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-9/jquery.typeahead.8c16be133f32c69c863e.min.js" type="text/javascript"></script><script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-9/TS.ui.typeahead.5bafd71c01aff1fc4a15.min.js" type="text/javascript"></script><script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-9/TS.web.apps.e41c11ea1cb3e786ec00.min.js" type="text/javascript"></script><script crossorigin="anonymous" onerror="window._cdn ? _cdn.failed(this, arguments) : null" onload="window._cdn ? _cdn.ok(this, arguments) : null" src="https://a.slack-edge.com/bv1-9/footer.f5b1e9c9d2bb0ceb532d.min.js" type="text/javascript"></script><script type="text/javascript">
+boot_data.app_id = "A3XLN0LPL";
+boot_data.app_name = "Smarsh Archiving & Compliance";
+boot_data.team_name = "";
+boot_data.encoded_support_email = "&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#115;&#109;&#97;&#114;&#115;&#104;&#46;&#99;&#111;&#109;";
+boot_data.app_support_url = "http:\/\/www.smarsh.com\/support";
+boot_data.app_url = "http:\/\/www.smarsh.com\/im-archiving\/slack";
+boot_data.app_icons = {"image_32":"https:\/\/slack-files2.s3-us-west-2.amazonaws.com\/avatars\/2017-01-27\/133702307938_63dcdb3aa2ae4e9bb9be_32.png","image_36":"https:\/\/slack-files2.s3-us-west-2.amazonaws.com\/avatars\/2017-01-27\/133702307938_63dcdb3aa2ae4e9bb9be_36.png","image_48":"https:\/\/slack-files2.s3-us-west-2.amazonaws.com\/avatars\/2017-01-27\/133702307938_63dcdb3aa2ae4e9bb9be_48.png","image_64":"https:\/\/slack-files2.s3-us-west-2.amazonaws.com\/avatars\/2017-01-27\/133702307938_63dcdb3aa2ae4e9bb9be_64.png","image_72":"https:\/\/slack-files2.s3-us-west-2.amazonaws.com\/avatars\/2017-01-27\/133702307938_63dcdb3aa2ae4e9bb9be_72.png","image_96":"https:\/\/slack-files2.s3-us-west-2.amazonaws.com\/avatars\/2017-01-27\/133702307938_63dcdb3aa2ae4e9bb9be_96.png","image_128":"https:\/\/slack-files2.s3-us-west-2.amazonaws.com\/avatars\/2017-01-27\/133702307938_63dcdb3aa2ae4e9bb9be_128.png","image_192":"https:\/\/slack-files2.s3-us-west-2.amazonaws.com\/avatars\/2017-01-27\/133702307938_63dcdb3aa2ae4e9bb9be_192.png","image_512":"https:\/\/slack-files2.s3-us-west-2.amazonaws.com\/avatars\/2017-01-27\/133702307938_63dcdb3aa2ae4e9bb9be_512.png","image_1024":"https:\/\/slack-files2.s3-us-west-2.amazonaws.com\/avatars\/2017-01-27\/133702307938_63dcdb3aa2ae4e9bb9be_1024.png","image_original":"https:\/\/slack-files2.s3-us-west-2.amazonaws.com\/avatars\/2017-01-27\/133702307938_63dcdb3aa2ae4e9bb9be_original.png"};
+boot_data.app_whitelist_requests_require_comment_enabled = false;
+boot_data.is_app_installed = false;
+boot_data.is_xoxa_app = false;
+boot_data.hide_app_info_tab = false;
+boot_data.is_external_auth_app_and_user_has_not_authed = false;
+
+/* Prepare GTM event for install clicks */
+window.dataLayer = window.dataLayer || [];
+
+
+
+ boot_data.show_full_app_description = true; 
+
+var _app_details = {
+	app_id: 133702020802,
+	app_name: "Smarsh Archiving & Compliance",
+	is_slack_owned: false,
+};
+
+var _encoded_app_id = "A3XLN0LPL";
+var _is_installed = false;
+var _is_slack_integration = false;
+var _is_directory_published = true;
+var _is_distributed = true;
+
+/* Used for GTM/GA tracking */
+var _app_type;
+
+if (_is_slack_integration) {
+	_app_type = 'slack_owned';
+} else if (_is_directory_published) {
+	_app_type = 'api_app_in_directory';
+} else if (!_is_distributed) {
+	_app_type = 'internal_integration';
+} else {
+	_app_type = 'api_app_not_in_directory';
+}
+
+var _gtm_details = {
+	app_id: _encoded_app_id,
+	is_installed: _is_installed,
+	app_type: _app_type,
+};
+
+/* Track page load */
+TS.interop.clog.track('APP_DIRECTORY_APP_DETAIL', _app_details);
+
+window.dataLayer.push($.extend({
+	event: 'AppDirectoryApp_Detail',
+}, _gtm_details));
+
+/* Track help links */
+TS.interop.clog.trackClick('[data-js="action_app_support"]', 'APP_DIRECTORY_WEBSITE_CLICK', $.extend({'click_target':'action_app_support'}, _app_details));
+TS.interop.clog.trackClick('[data-js="action_app_privacy"]', 'APP_DIRECTORY_WEBSITE_CLICK', $.extend({'click_target':'action_app_privacy'}, _app_details));
+TS.interop.clog.trackClick('[data-js="action_report_app"]', 'APP_DIRECTORY_WEBSITE_CLICK', $.extend({'click_target':'action_report_app'}, _app_details));
+
+/* Track action links */
+$('[data-action_sign_in], [data-js="sign_in"]').click(function() {
+	TS.interop.clog.track('APP_DIRECTORY_WEBSITE_CLICK', $.extend({
+		click_target: 'action_sign_in_to_install'
+	}, _app_details));
+
+	window.dataLayer.push($.extend({
+		event: 'AppDirectoryApp_SignInToInstall',
+	}, _gtm_details));
+});
+
+$('[data-js="action_request_app"]').click(function() {
+	TS.interop.clog.track('APP_DIRECTORY_WEBSITE_CLICK', $.extend({
+		click_target: 'action_request_app'
+	}, _app_details));
+
+	window.dataLayer.push($.extend({
+		event: 'AppDirectoryApp_RequestInstall',
+	}, _gtm_details));
+});
+
+$('#action_install_app, [data-js="install"]').click(function() {
+	TS.interop.clog.track('APP_DIRECTORY_WEBSITE_CLICK', $.extend({
+		click_target: 'action_app_install'
+	}, _app_details));
+
+	window.dataLayer.push($.extend({
+		event: 'AppDirectoryApp_Install',
+	}, _gtm_details));
+});
+
+$('#action_direct_install_app, [data-js="direct_install"]').click(function() {
+	TS.interop.clog.track('APP_DIRECTORY_WEBSITE_CLICK', $.extend({
+		click_target: 'action_direct_install_app'
+	}, _app_details));
+
+	window.dataLayer.push($.extend({
+		event: 'AppDirectoryApp_DirectInstall',
+	}, _gtm_details));
+});
+
+// why are the properties on these different?
+// this click handler has been updated to use ui_context and combines
+// the previous way of logging with the newer, better way of logging.
+$('[data-action_blueprint_clone_install], [data-js="blueprin_clone_install"]').click(function() {
+	TS.interop.clog.track('APP_DIRECTORY_WEBSITE_CLICK', $.extend({
+		contexts: {
+			ui_context: {
+				step: 'page_app_detail',
+				action: 'action_blueprint_clone_install',
+				ui_element: 'action_blueprint_clone_install',
+			},
+		},
+		uiclick_target: 'action_blueprint_clone_install'
+	}, _app_details));
+
+	window.dataLayer.push($.extend({
+		event: 'AppDirectoryApp_BlueprintCloneInstall',
+	}, _gtm_details));
+});
+
+$('[data-action_blueprint_clone_edit]').click(function() {
+	TS.interop.clog.track('APP_DIRECTORY_WEBSITE_CLICK', $.extend({
+		contexts: {
+			ui_context: {
+				step: 'page_app_detail',
+				action: 'action_blueprint_clone_edit',
+				ui_element: 'action_blueprint_clone_edit',
+			},
+		},
+		uiclick_target: 'action_blueprint_clone_edit'
+	}, _app_details));
+
+	window.dataLayer.push($.extend({
+		event: 'AppDirectoryApp_BlueprintCloneEdit',
+	}, _gtm_details));
+});
+
+$('[data-action_blueprint_clones_delete]').click(function() {
+	TS.interop.clog.track('APP_DIRECTORY_WEBSITE_CLICK', $.extend({
+		contexts: {
+			ui_context: {
+				step: 'page_app_detail',
+				action: 'action_blueprint_clones_delete',
+				ui_element: 'action_blueprint_clones_delete',
+			},
+		},
+		uiclick_target: 'action_blueprint_clones_delete'
+	}, _app_details));
+
+	window.dataLayer.push($.extend({
+		event: 'AppDirectoryApp_BlueprintClonesDelete',
+	}, _gtm_details));
+});
+
+$('[data-direct_install]').click(function() {
+	TS.interop.clog.track('APP_DIRECTORY_WEBSITE_CLICK', $.extend({
+		click_target: 'action_app_install'
+	}, _app_details));
+
+	window.dataLayer.push($.extend({
+		event: 'AppDirectoryApp_DirectInstallVisitSite',
+	}, _gtm_details));
+});
+
+$('[data-visit_to_install], [data-js="visit_to_install"]').click(function() {
+	TS.interop.clog.track('APP_DIRECTORY_WEBSITE_CLICK', $.extend({
+		click_target: 'action_app_install'
+	}, _app_details));
+
+	window.dataLayer.push($.extend({
+		event: 'AppDirectoryApp_VisitSiteToInstall',
+	}, _gtm_details));
+});
+
+$('[data-learn_more], [data-js="learn_more"]').click(function() {
+	TS.interop.clog.track('APP_DIRECTORY_WEBSITE_CLICK', $.extend({
+		click_target: 'action_app_install'
+	}, _app_details));
+
+	window.dataLayer.push($.extend({
+		event: 'AppDirectoryApp_VisitSiteToLearnMore',
+	}, _gtm_details));
+});
+
+$('[data-open_in_slack], [data-js="open_in_slack"]').click(function() {
+	TS.interop.clog.track('APP_DIRECTORY_WEBSITE_CLICK', $.extend({
+		click_target: 'action_open_in_slack'
+	}, _app_details));
+
+	window.dataLayer.push($.extend({
+		event: 'AppDirectoryApp_OpenInSlack',
+	}, _gtm_details));
+});
+
+$('#action_add_app_configuration, [data-js="add_config"]').click(function() {
+	TS.interop.clog.track('APP_DIRECTORY_WEBSITE_CLICK', $.extend({
+		click_target: 'action_add_app_configuration'
+	}, _app_details));
+
+	window.dataLayer.push($.extend({
+		event: 'AppDirectoryApp_AddConfiguration',
+	}, _gtm_details));
+});
+
+// Clog listener for category button clicks
+$('[data-app-category]').click(function(e) {
+	if (e && e.target) {
+		const categoryId = e.target.getAttribute('data-app-category');
+		TS.interop.clog.track('APP_DIRECTORY_CATEGORY_BUTTON_CLICK', {
+			category_id: Number(categoryId),
+		});
+	}
+})
+
+// Clogs for app directory monetization exp
+$('[data-js="add_to_slack_money"]').click(function() {
+	TS.interop.clog.track('APP_DIRECTORY_WEBSITE_CLICK', $.extend({
+		click_target: 'action_add_to_slack_money'
+	}, _app_details));
+});
+$('[data-js="learn_more_money"]').click(function() {
+	TS.interop.clog.track('APP_DIRECTORY_WEBSITE_CLICK', $.extend({
+		click_target: 'action_learn_more_money'
+	}, _app_details));
+});
+
+
+ boot_data.no_login = true; 
+boot_data.number_of_clone_apps = 0;
+boot_data.wta_installed = false;
+boot_data.app_user_id = "";
+boot_data.service_id = "";
+boot_data.is_mobile = false;
+</script><style>.color_9f69e7:not(.nuc) {color:#9F69E7;}.color_4bbe2e:not(.nuc) {color:#4BBE2E;}.color_e7392d:not(.nuc) {color:#E7392D;}.color_3c989f:not(.nuc) {color:#3C989F;}.color_674b1b:not(.nuc) {color:#674B1B;}.color_e96699:not(.nuc) {color:#E96699;}.color_e0a729:not(.nuc) {color:#E0A729;}.color_684b6c:not(.nuc) {color:#684B6C;}.color_5b89d5:not(.nuc) {color:#5B89D5;}.color_2b6836:not(.nuc) {color:#2B6836;}.color_99a949:not(.nuc) {color:#99A949;}.color_df3dc0:not(.nuc) {color:#DF3DC0;}.color_4cc091:not(.nuc) {color:#4CC091;}.color_9b3b45:not(.nuc) {color:#9B3B45;}.color_d58247:not(.nuc) {color:#D58247;}.color_bb86b7:not(.nuc) {color:#BB86B7;}.color_5a4592:not(.nuc) {color:#5A4592;}.color_db3150:not(.nuc) {color:#DB3150;}.color_235e5b:not(.nuc) {color:#235E5B;}.color_9e3997:not(.nuc) {color:#9E3997;}.color_53b759:not(.nuc) {color:#53B759;}.color_c386df:not(.nuc) {color:#C386DF;}.color_385a86:not(.nuc) {color:#385A86;}.color_a63024:not(.nuc) {color:#A63024;}.color_5870dd:not(.nuc) {color:#5870DD;}.color_ea2977:not(.nuc) {color:#EA2977;}.color_50a0cf:not(.nuc) {color:#50A0CF;}.color_d55aef:not(.nuc) {color:#D55AEF;}.color_d1707d:not(.nuc) {color:#D1707D;}.color_43761b:not(.nuc) {color:#43761B;}.color_e06b56:not(.nuc) {color:#E06B56;}.color_8f4a2b:not(.nuc) {color:#8F4A2B;}.color_902d59:not(.nuc) {color:#902D59;}.color_de5f24:not(.nuc) {color:#DE5F24;}.color_a2a5dc:not(.nuc) {color:#A2A5DC;}.color_827327:not(.nuc) {color:#827327;}.color_3c8c69:not(.nuc) {color:#3C8C69;}.color_8d4b84:not(.nuc) {color:#8D4B84;}.color_84b22f:not(.nuc) {color:#84B22F;}.color_4ec0d6:not(.nuc) {color:#4EC0D6;}.color_e23f99:not(.nuc) {color:#E23F99;}.color_e475df:not(.nuc) {color:#E475DF;}.color_619a4f:not(.nuc) {color:#619A4F;}.color_a72f79:not(.nuc) {color:#A72F79;}.color_7d414c:not(.nuc) {color:#7D414C;}.color_aba727:not(.nuc) {color:#ABA727;}.color_965d1b:not(.nuc) {color:#965D1B;}.color_4d5e26:not(.nuc) {color:#4D5E26;}.color_dd8527:not(.nuc) {color:#DD8527;}.color_bd9336:not(.nuc) {color:#BD9336;}.color_e85d72:not(.nuc) {color:#E85D72;}.color_dc7dbb:not(.nuc) {color:#DC7DBB;}.color_bc3663:not(.nuc) {color:#BC3663;}.color_9d8eee:not(.nuc) {color:#9D8EEE;}.color_8469bc:not(.nuc) {color:#8469BC;}.color_73769d:not(.nuc) {color:#73769D;}.color_b14cbc:not(.nuc) {color:#B14CBC;}</style>
+<!-- slack-www-hhvm-main-iad-1rh0/ 2021-06-16 09:20:32/ v5a2e267fe79ec62d6bc1e4579be011b05b8850dd/ B:H -->
+</body></html>
