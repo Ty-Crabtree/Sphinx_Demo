@@ -11,9 +11,6 @@ from awesome_progress_bar import ProgressBar
 from vaporwavely import vaporize
 from PIL import Image
 from picharsso import new_drawer
-import sphinx
-import torch
-from torchvision import models
 
 
 class Scrape:
@@ -34,85 +31,27 @@ class Scrape:
         self.scrape_folder = "scraped/"
 
     def header(self):
-        """
-
-        Returns
-        -------
-
-        """
         art.tprint("Scraper", font="small")
 
     def error_msg(self, error):
-        """
-
-        Parameters
-        ----------
-        error
-
-        Returns
-        -------
-
-        """
         print(colorama.Fore.RED + str(error) + colorama.Style.RESET_ALL)
 
     def warning_msg(self, error):
-        """
-
-        Parameters
-        ----------
-        error
-
-        Returns
-        -------
-
-        """
         print(colorama.Fore.YELLOW + str(error) + colorama.Style.RESET_ALL)
 
     def purple_print(self, word):
-        """
-
-        Parameters
-        ----------
-        word
-
-        Returns
-        -------
-
-        """
         print(colorama.Fore.MAGENTA + str(word) + colorama.Style.RESET_ALL)
 
     def green_print(self, word):
-        """
-
-        Parameters
-        ----------
-        word
-
-        Returns
-        -------
-
-        """
         print(colorama.Fore.GREEN + str(word) + colorama.Style.RESET_ALL)
 
     def web_browser(self):
-        """
-
-        Returns
-        -------
-
-        """
         try:
             print(webbrowser.open(self.search))
         except Exception as e:
             self.error_msg(e)
 
     def wiki_search(self):
-        """
-
-        Returns
-        -------
-
-        """
         self.purple_print("Searching Wiki's API:")
         try:
             for page in wikipedia.search(self.search):
@@ -129,12 +68,6 @@ class Scrape:
             self.error_msg(e)
 
     def tor_search(self):
-        """
-
-        Returns
-        -------
-
-        """
         with torrequest.TorRequest() as tr:
             response = tr.get('https://smarsh.com')
 
@@ -142,16 +75,6 @@ class Scrape:
             print(response.content)  # not your IP address
 
     def get_html_from_url(self, url=None):
-        """
-
-        Parameters
-        ----------
-        url
-
-        Returns
-        -------
-
-        """
         urllib3.disable_warnings()
         self.purple_print("Grabbing html...")
         try:
@@ -166,12 +89,6 @@ class Scrape:
             self.error_msg(e)
 
     def save_html(self):
-        """
-
-        Returns
-        -------
-
-        """
         try:
             soup = bs4.BeautifulSoup(self.html, 'html.parser')
             self.green_print(f'Saving {soup.title.string}')
@@ -182,12 +99,6 @@ class Scrape:
             self.error_msg(e)
 
     def save_images(self):
-        """
-
-        Returns
-        -------
-
-        """
         try:
             self.green_print('Saving images.')
             with open(f'{self.scrape_folder}{self.search}_images.txt', 'w') as f:
@@ -197,31 +108,13 @@ class Scrape:
             self.error_msg(e)
 
     def google_parse(self):
-        """
-
-        Returns
-        -------
-
-        """
         self.purple_print("Parsing web...")
         self.url_list = search(self.search)
 
     def neural(self):
-        """
-
-        Returns
-        -------
-
-        """
         self.progress_bar = ProgressBar(10, prefix='Loading', suffix='Output: ', bar_length=10)
 
     def exit(self):
-        """
-
-        Returns
-        -------
-
-        """
         mystring = "Exiting Scraper"
         drawer = new_drawer("braille", height=10, colorize=True)
         print(vaporize(mystring))
@@ -231,12 +124,6 @@ class Scrape:
         exit(0)
 
     def controller(self):
-        """
-
-        Returns
-        -------
-
-        """
         self.header()
         self.search = input("Search: ")
         self.neural()
@@ -249,7 +136,5 @@ class Scrape:
 
 
 if __name__ == '__main__':
-    """
-    """
     scraper = Scrape()
     scraper.controller()
